@@ -14,6 +14,8 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
+use AppBundle\Service\RateLimiter;
+
 class CollectController extends Controller
 {
     /**
@@ -29,8 +31,12 @@ class CollectController extends Controller
         
         // Quelle que qoit la méthode HTTP, on deserialize vers un tableau d'objets Measurement
         if($request->getMethod() === "GET") {
+            // Retirer le paramètre z pour le calcul de la signature de la requête
+            $request->query->remove("z");
+            $requestContent = serialize($request->query->all());
             $measures[] = new Measurement($request->query->all());
         } else if($request->getMethod() === "POST") {
+            $requestContent = $request->getContent();
             $measures = $serializer->deserialize($request->getContent(), 'AppBundle\Document\Measurement[]', 'json');
         } else {
             return new Response("Invalid method", Response::HTTP_METHOD_NOT_ALLOWED);
@@ -63,7 +69,13 @@ class CollectController extends Controller
          */
         
         if($noError) {
-            return new Response("OK", Response::HTTP_OK);
+            $rateLimiter = $this->get(RateLimiter::class);
+            if($rateLimiter->checkRequest($requestContent)) {
+                return new Response("OK", Response::HTTP_OK);
+            } else {
+                return new Response("Too many requests", Response::HTTP_TOO_MANY_REQUESTS);
+            }
+            
         } else {
             // FIXME: le serialiseur de base traduit toutes les propriétés de l'objet ConstraintViolation : non désirable
             //$reponse = $serializer->serialize($errors, 'json');
