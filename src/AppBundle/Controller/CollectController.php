@@ -39,7 +39,7 @@ class CollectController extends Controller
         // Validation de chaque objet
         $noError= true;
         $validator = $this->get('validator');
-         $dm = $this->get('doctrine_mongodb')->getManager();
+        $dm = $this->get('doctrine_mongodb')->getManager();
         foreach($measures as $m) {
             // Pour les contraintes de validation dépendantes du type d'appareil (mobile ou web)
             $m->setIsMobile($isMobile);
@@ -48,10 +48,10 @@ class CollectController extends Controller
                 $noError = false;
             } else {
                 $dm->persist($m);
-                $dm->flush();
             }
             $errors[] = $v;
         }
+        $dm->flush();
         
         /* Si au moins une erreur présente, retourne une erreur 400 et un tableau de la forme :
          * [ [],  // Pas d'erreur
