@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/fred/Machines/symfony/projects/wizbii-tech-test/app/config/routing_dev.yml</file>
+            <file>file:/home/fred/Machines/symfony/projects/wizbii-tech-test/src/AppBundle/AppBundle.php</file>
+            <file>file:/home/fred/Machines/symfony/projects/wizbii-tech-test/tests/AppBundle/Controller/DefaultControllerTest.php</file>
+            <file>file:/home/fred/Machines/symfony/projects/wizbii-tech-test/app/AppKernel.php</file>
+            <file>file:/home/fred/Machines/symfony/projects/wizbii-tech-test/phpunit.xml.dist</file>
+            <file>file:/home/fred/Machines/symfony/projects/wizbii-tech-test/web/app_dev.php</file>
+            <file>file:/home/fred/Machines/symfony/projects/wizbii-tech-test/src/AppBundle/Document/Measurement.php</file>
+            <file>file:/home/fred/Machines/symfony/projects/wizbii-tech-test/app/config/config.yml</file>
+            <file>file:/home/fred/Machines/symfony/projects/wizbii-tech-test/app/config/parameters.yml.dist</file>
+            <file>file:/home/fred/Machines/symfony/projects/wizbii-tech-test/composer.json</file>
+            <file>file:/home/fred/Machines/symfony/projects/wizbii-tech-test/app/config/services.yml</file>
+            <file>file:/home/fred/Machines/symfony/projects/wizbii-tech-test/src/AppBundle/Controller/DefaultController.php</file>
+            <file>file:/home/fred/Machines/symfony/projects/wizbii-tech-test/app/config/parameters.yml</file>
+            <file>file:/home/fred/Machines/symfony/projects/wizbii-tech-test/app/config/routing.yml</file>
+            <file>file:/home/fred/Machines/symfony/projects/wizbii-tech-test/tests/AppBundle/Document/MeasurementTest.php</file>
+        </group>
+    </open-files>
+</project-private>

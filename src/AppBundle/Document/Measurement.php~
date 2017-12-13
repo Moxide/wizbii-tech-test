@@ -1,0 +1,142 @@
+<?php
+
+namespace AppBundle\Document;
+
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @MongoDB\Document
+ */
+class Measurement
+{
+    /**
+     * @MongoDB\Id
+     */
+    protected $id;
+
+    /**
+     * @MongoDB\Field(type="integer")
+     * @Assert\NotBlank()
+     * @Assert\EqualTo(1)
+     */
+    protected $v;
+
+    /**
+     * @MongoDB\Field(type="string")
+     * @Assert\NotBlank()
+     * @Assert\Choice({"pageview", "screenview", "event"})
+     */
+    protected $t;
+
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $dl;
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $dr;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     * @Assert\Choice({"profile", "recruiter", "visitor", "wizbii_employee"})
+     */
+    protected $wct;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $wui;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $wuui;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $ec;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $ea;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $el;
+
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $ev;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     * @Assert\NotBlank()
+     */
+    protected $tid;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     * @Assert\NotBlank()
+     */
+    protected $ds;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $cn;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $cs;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $cm;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $ck;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $cc;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $sn;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $an;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $av;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $qt;
+    
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $z;
+    
+
+    
+}
+
